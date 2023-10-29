@@ -59,7 +59,7 @@ def get_social_media_analytics(handle):
     app.sign_in(username=username, password=password)
     usertweets= app.get_tweets(username=handle,pages=1)
     a=('\n').join([tweet.text for tweet in usertweets.tweets])
-    openai.api_key = "${{ secrets.openaikey }}"
+    openai.api_key = "${{ secrets.OPENAI_APIKEY }}"
 
     completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
