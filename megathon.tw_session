@@ -1,0 +1,79 @@
+{
+    "cookies": "kdt=MrEOrfU1fOXlK9r02SYZ1jSVmvSgTaQDLO7CTpDU;twid=\"u=1718455640363061248\";att=;ct0=c672753cd95f81467bdd3304e2dec052;auth_token=9f61bb7fe7055d799e2f8715db0e4d6fdca9b3a2;",
+    "user": {
+        "original_user": {
+            "can_dm": true,
+            "can_media_tag": true,
+            "created_at": "Sun Oct 29 02:32:14 +0000 2023",
+            "default_profile": true,
+            "default_profile_image": true,
+            "description": "",
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "fast_followers_count": 0,
+            "favourites_count": 0,
+            "followers_count": 0,
+            "friends_count": 5,
+            "has_custom_timelines": false,
+            "is_translator": false,
+            "listed_count": 0,
+            "location": "",
+            "media_count": 0,
+            "name": "koushik",
+            "needs_phone_verification": false,
+            "normal_followers_count": 0,
+            "pinned_tweet_ids_str": [],
+            "possibly_sensitive": false,
+            "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+            "profile_interstitial_type": "",
+            "screen_name": "koushik15024",
+            "statuses_count": 8,
+            "translator_type": "none",
+            "verified": false,
+            "want_retweets": false,
+            "withheld_in_countries": []
+        },
+        "id": 1718455640363061248,
+        "rest_id": 1718455640363061248,
+        "created_at": "2023-10-29 02:32:14+00:00",
+        "date": "2023-10-29 02:32:14+00:00",
+        "entities": {
+            "description": {
+                "urls": []
+            }
+        },
+        "description": null,
+        "bio": null,
+        "fast_followers_count": null,
+        "favourites_count": null,
+        "followers_count": null,
+        "friends_count": 5,
+        "has_custom_timelines": null,
+        "is_translator": null,
+        "listed_count": null,
+        "location": null,
+        "media_count": null,
+        "name": "koushik",
+        "normal_followers_count": null,
+        "profile_banner_url": null,
+        "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "profile_interstitial_type": null,
+        "protected": null,
+        "screen_name": "koushik15024",
+        "username": "koushik15024",
+        "statuses_count": 8,
+        "translator_type": "none",
+        "verified": false,
+        "can_dm": true,
+        "following": false,
+        "community_role": null,
+        "notifications_enabled": false,
+        "notifications": false,
+        "possibly_sensitive": null,
+        "pinned_tweets": null,
+        "profile_url": "https://twitter.com/koushik15024"
+    }
+}

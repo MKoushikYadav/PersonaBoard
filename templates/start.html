@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Test</title>
+    
+</head>
+<div class="logo">
+    <img src="./../static/images/logo.png" alt="Logo">
+</div>
+<body class="bg-blue p-4">
+    <div class="login-box">
+        <h2>Start Test</h2>
+        <form action="/test" method="POST">
+          <div class="user-box">
+            <input type="name" name="name" placeholder="Name" required>
+          </div>
+          <div class="user-box">
+            <input type="email" name="emailid" placeholder="Email ID" required>
+          </div>
+          <div class="btn-div">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+    </div>
+</body>
+<style>
+  html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family:'Arial Narrow', Helvetica, sans-serif;
+    background: rgb(24,119,241);
+  }
+    
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 1px solid #1705ba; /* Change border color and width as needed */
+    border-radius: 5px; /* Change border radius as needed */
+    padding: 5px;
+    background-color: #fff; /* Change background color as needed */
+  }
+
+  .logo img {
+    max-width: 200px; /* Adjust the maximum width as needed */
+    height: auto;
+  }
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #000;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:-30px;
+    font-weight: bold;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    transition: .5s;
+  }
+  
+  .login-box form button{
+    position: relative;
+    background: rgb(24,119,241);
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 20px;
+    letter-spacing: 4px
+  }
+  
+  .btn-div {
+    align-content: center;
+  }
+
+  .login-box form button:hover{
+    box-shadow: #000 0 0 5px;
+  }
+      
+</style>
+</html>

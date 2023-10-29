@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <style>
+        body {
+            font-family:  Helvetica, sans-serif;
+            background-color: rgb(24,119,241);
+            text-align: center;
+        }
+    
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px;
+      background-color: #fff; /* Change background color as needed */
+      margin-top: 15px;
+    }
+  
+    .logo img {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      height: auto;
+    }
+
+        h1 {
+            background-color: #fff;
+            color: rgb(24,119,241);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin: 5px;
+        }
+
+        .interest_label {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            box-shadow: #000 0 0 5px;
+        }
+        .optionslist{
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            border-radius: 0.25rem;
+          }
+          
+            .options{
+            position: relative;
+            display: block;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0;
+          }
+          
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="./../static/images/logo.png" alt="Logo">
+    </div>
+    <form method="POST">
+    {%if c <= 10%}
+    <h1>{%if c < 6%}Aptitude{%endif%} {%if c > 5%}Emotional Quotient {%endif%} Test</h1>
+    <div class="container">
+        <!-- Q/A for EQ And Apt -->
+        <div class="question">
+            {{questions[c-1]['q']}}        
+        </div>
+        <div class="optionslist">
+        <div class="options">
+        <input type="radio" name="ans" class="options" value="1"><label for="op1">
+            {{questions[c-1]['op1']}}
+        </label> <br></div>
+
+        <div class="options">
+        <input type="radio" name="ans" class="options" value="2"><label for="op2">
+            {{questions[c-1]['op2']}}
+        </label></div><br>
+
+        <div class="options">
+        <input type="radio" name="ans" class="options" value="3"><label for="op3">
+            {{questions[c-1]['op3']}}
+        </label>
+        </div><br>
+
+        <div class="options">
+        <input type="radio" name="ans" class="options" value="4"><label for="op4">
+            {{questions[c-1]['op4']}}
+        </label></div></div>
+    </div>
+    {%endif%}
+
+    {%if c > 10 and c <= 15%}
+    <h1>Work Style Test</h1>
+    <div class="container">
+        <div class="question">
+            {{questions[c-1]['q']}}
+        </div>
+        <input type="radio" name="ans" class="options" value="{{questions[c-1]['op1']}}"><label for="op1">
+            {{questions[c-1]['op1']}}
+        </label><br>
+        <input type="radio" name="ans" class="options" value="{{questions[c-1]['op2']}}"><label for="op2">
+            {{questions[c-1]['op2']}}
+        </label><br>
+        <input type="radio" name="ans" class="options" value="{{questions[c-1]['op3']}}"><label for="op3">
+            {{questions[c-1]['op3']}}
+        </label>
+    </div>
+    {%endif%}
+
+    {%if c == 16%}
+    <h1>Interests</h1>
+    <div class="container">
+        {% for i in range(l) %}
+        <section class="interest_label">
+        <input type="checkbox" id="{{interests[i]}}" name="interests" value="{{interests[i]}}">
+        <label for="interests">{{interests[i]}}</label>
+        </section>
+        {% endfor %}
+    </div>
+    {%endif%}
+    
+    {%if c > 1%}
+    <button type="submit" id="back" formaction="/back">
+        Back
+    </button>
+    {%endif%}
+
+    {%if c < 16%}
+    <button type="submit" id="next" formaction="/next">
+        Next
+    </button>
+    {%endif%}
+
+    <br><br>
+    
+    {%if c == 16%}
+    <button type="submit" id="submit" formaction="/result">
+        Submit Test
+    </button>
+    {%endif%}
+    </form>
+</body>
+</html>

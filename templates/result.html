@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(24,119,241);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border: 1px solid #1705ba; /* Change border color and width as needed */
+      border-radius: 5px; /* Change border radius as needed */
+      padding: 5px;
+      background-color: #fff; /* Change background color as needed */
+    }
+  
+    .logo img {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      height: auto;
+    }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .email {
+            color: #3498db; /* Blue color for email */
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .score {
+            font-weight: bold;
+        }
+
+        .score-bar {
+            height: 20px;
+            background-color: rgb(24,119,241); /* Blue bar color */
+            margin-top: 5px;
+            border: black 1px solid;
+            border-radius: 5px;
+        }
+
+        .interests h3 {
+            font-weight: bold;
+        }
+
+        .interests {
+            margin-top: 10px;
+            
+        }
+
+        .social-media-analysis {
+            margin-top: 10px; 
+        }
+        <!-- ul li {
+            list-style: none;
+            border: 1px solid black;
+          }
+
+        ul.workstyle>li{
+            text-align: left;
+        } -->
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            border-radius: 0.25rem;
+          }
+          
+          li{
+            position: relative;
+            display: block;
+            padding: 0.5rem,1rem;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0;
+          }
+          
+    </style>
+</head>
+<body>
+  <div class="logo">
+      <img src="./../static/images/logo.png" alt="Logo">
+  </div>
+  <div class="container">
+      <div class="name">{{ name.capitalize() }}</div>
+      <br>
+      <div class="email">E-mail ID: {{ emailid }}</div>
+      <div class="results">
+          <h2>Results</h2>
+          <div class="score">Aptitude Score: {{ apt_score }}</div>
+          <div class="score-bar" style="width: {{apt_score*20}}%;"></div>
+          <br>
+          <div class="score">Emotional Quotient Score: {{ eq_score }}</div>
+          <div class="score-bar" style="width:{{eq_score*20}}%;"></div>
+          <h3>Work Style Preferences</h3>
+          <ul class="workstyle">
+            {% for ws in ws_data %}
+              <li> {{ ws['q'] }}   :   {{ ws['result'] }}</li>
+            {% endfor %}
+          </ul>
+      </div>
+      <div class="interests">
+          <h3>Interests</h3>
+          <ul class="ints">
+            {% for interest in interests %}
+              <li> {{ interest}} </li>
+            {% endfor %}
+          </ul>
+      </div>
+      <div class="social-media-analysis">
+          <h3>Social Media Analysis</h3>
+          <ul>
+            {% for topic in topics %}
+              <li> {{ topic }} </li>
+            {% endfor %}
+          </ul>
+      </div>
+  </div>
+</body>
+</html>

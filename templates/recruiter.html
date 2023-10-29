@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Candidate Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border: 1px solid #1705ba; /* Change border color and width as needed */
+      border-radius: 5px; /* Change border radius as needed */
+      padding: 5px;
+      background-color: #fff; /* Change background color as needed */
+    }
+  
+    .logo img {
+      max-width: 200px; /* Adjust the maximum width as needed */
+      height: auto;
+    }
+
+        .card {
+            background-color: rgb(24,119,241); /* Blue background color */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            color: #ffffff; /* White text color */
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .dropdown {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #ffffff; /* White background color */
+            border: none;
+            font-weight: bold;
+            color: rgb(24,119,241); /* Blue text color */
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #f0f0f0; /* Light gray background on hover */
+        }
+    </style>
+</head>
+<body>
+  <div class="logo">
+      <img src="./../static/images/logo.png" alt="Logo">
+  </div>
+  <form action="/report" method="post">
+    <div class="card">
+        <h2>Select a Name</h2>
+        <select class="dropdown" name="emailid">
+          {% for candidate in candidates %}
+            <option value="{{candidate['emailid']}}" name="{{candidate['emailid']}}">{{candidate['name']}} - {{candidate['emailid']}}</option>
+          {% endfor %}
+        </select>
+        <input class="submit-button" type="submit" value="Get Report">
+    </div>
+  </form>
+</body>
+</html>
+
