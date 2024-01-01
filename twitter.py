@@ -1,5 +1,9 @@
-username='koushik15024'
-password='Roopa.18'
+username,password='',''
+with open("twitter.config") as config:
+  credentials= [line.split(' ') for line in config.read().split('\n')]
+  username=credentials[0][1]
+  password=credentials[1][1]
+  
 userlist=['koushik15024','techieMeIndian','Guptaajikaladka']
 
 from tweety import Twitter
